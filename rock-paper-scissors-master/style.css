@@ -322,3 +322,21 @@ button.rules{
         }
     }
 }
+
+@media (max-width: 301px) {
+    .step{
+        width: 100%;
+        .playerStep, .houseStep{
+            h3{
+                font-size: 15px;
+            }
+            .conter{
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+    button.rules{
+        margin-top: 50px;
+    }
+}
