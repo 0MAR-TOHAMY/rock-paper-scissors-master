@@ -323,7 +323,7 @@ button.rules{
     }
 }
 
-@media (max-width: 301px) {
+@media (max-width: 340px) {
     .step{
         width: 100%;
         .playerStep, .houseStep{
