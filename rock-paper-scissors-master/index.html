@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+  <div class="container">
+    <div class="gameHead">
+      <img src="./images/logo-bonus.svg" alt="logo">
+      <div class="score">
+        <h6>score</h6>
+        <span class="total">0</span>
+      </div>
+    </div>
+    <div class="gameBody">
+      <img src="./images/bg-pentagon.svg" alt="bg-pentagon">
+      <button onclick="Choice(this)" class="paper"><img src="./images/icon-paper.svg" alt="paper"></button>
+      <button onclick="Choice(this)" class="rock"><img src="./images/icon-rock.svg" alt="rock"></button>
+      <button onclick="Choice(this)" class="scissors"><img src="./images/icon-scissors.svg" alt="scissors"></button>
+      <button onclick="Choice(this)" class="spock"><img src="./images/icon-spock.svg" alt="spock"></button>
+      <button onclick="Choice(this)" class="lizard"><img src="./images/icon-lizard.svg" alt="lizard"></button>
+    </div>
+    <div class="step">
+      <div class="playerStep">
+        <h3>YOU PICKED</h3>
+        <div class="conter">
+        </div>
+      </div>
+      <div class="houseStep">
+        <h3>THE HOUSE PICKED</h3>
+        <div class="conter">
+        </div>
+      </div>
+    </div>
+    <div class="result">
+      <h2></h2>
+      <button onclick="playAgain()">PLAY AGAIN</button>
+    </div>
+    <button onclick="openRulesWindow()" class="rules">
+      RULES
+    </button>
+    <div class="rulesModal">
+      <div class="top">
+        <h2>RULES</h2>
+      </div>
+      <img src="./images/image-rules-bonus.svg" alt="rules">
+      <button onclick="closeRulesWindow()" class="close"><img src="./images/icon-close.svg" alt="close"></button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

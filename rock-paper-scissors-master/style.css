@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --scissors-Gradient: #ec9e0e;
+    --paper-Gradient: #4865f4;
+    --rock-Gradient: #dc2e4e;
+    --lizard-Gradient: #834fe3;
+    --spock-Gradient: #40b9ce;
+
+    --Dark-Text: #3b4363;
+    --Score-Text: #2a46c0;
+    --Header-Outline: #606e85;
+}
+
+html{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background: radial-gradient(circle farthest-side at center top, #1f3756, #141539);
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 20px;
+}
+
+.gameHead{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border: 5px solid var(--Header-Outline);
+    border-radius: 15px;
+    width: 50%;
+    padding: 10px;
+    .score{
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
+        width: 15%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 20px;
+        h6{
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--Score-Text);
+            margin: 0;
+        }
+        span{
+            font-size: 50px;
+            font-weight: 700;
+            color: var(--Dark-Text);
+        }
+    }
+}
+
+.gameBody{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    button{
+        position: absolute;
+        padding: 10px;
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+    }
+    button.rock{
+        bottom: -40px;
+        right: 5%;
+        border: 15px solid var(--rock-Gradient);
+    }
+    button.paper{
+        top: 20%;
+        right: -40px;
+        border: 15px solid var(--paper-Gradient);
+    }
+    button.scissors{
+        top: -40px;
+        border: 15px solid var(--scissors-Gradient);
+    }
+    button.lizard{
+        bottom: -40px;
+        left: 5%;
+        border: 15px solid var(--lizard-Gradient);
+    }
+    button.spock{
+        left: -40px;
+        top: 20%;
+        border: 15px solid var(--spock-Gradient);
+    }
+}
+
+.step{
+    display: none;
+    width: 50%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+    .playerStep, .houseStep{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h3{
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: white;
+        }
+        .conter{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 130px;
+            height: 130px;
+            background-color: rgba(0, 0, 0, 0.24);
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            img{
+                width: 70%;
+                height: 70%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.result{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2{
+        font-size: 40px;
+        font-weight: 700;
+        color: white;
+    }
+    button{
+        padding: 10px 20px;
+        background-color: var(--Dark-Text);
+        color: white;
+        margin-top: -20px;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        &:hover{
+            background-color: white;
+            color: var(--Dark-Text);
+        }
+    }
+}
+
+button.rules{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    padding: 5px 20px;
+    background-color: transparent;
+    color: var(--Header-Outline);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 3px solid var(--Header-Outline);
+    border-radius: 8px;
+    transition: 0.3s ease;
+    &:hover{
+        color: white;
+        border: 3px solid white;
+    }
+}
+
+
+.rulesModal{
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 30px 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border-radius: 15px;
+    top: 20%;
+    .top{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--Dark-Text);
+    }
+    button.close{
+        position: absolute;
+        top: 45px;
+        right: 30px;
+        background-color: transparent;
+        color: var(--Dark-Text);
+        font-size: 24px;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s ease;
+        &:hover{
+            scale: 1.05;
+        }
+    }
+}
+
+.open{
+    display: flex;
+}
+
+@media (max-width: 900px){
+    .gameHead{
+        width: 90%;
+    }
+    .step{
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px){
+    .step{
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px){
+    .step{
+        width: 100%;
+    }
+}
+
+@media (max-width: 376px){
+    .gameHead{
+        width: 80%;
+        .score{
+            width: 30%;
+        }
+    }
+    .gameBody{
+        img{
+            width: 70%;
+        }
+        button{
+            width: 100px;
+            height: 100px;
+        }
+        button.rock{
+            bottom: -40px;
+            right: 10%;
+        }
+        button.paper{
+            top: 20%;
+            right: 0;
+        }
+        button.scissors{
+            top: -40px;
+        }
+        button.lizard{
+            bottom: -40px;
+            left: 10%;
+        }
+        button.spock{
+            left: 0;
+            top: 20%;
+        }
+    }
+    button.rules{
+        position: static;
+        margin-top: 100px;
+    }
+    .step{
+        width: 90%;
+        .playerStep, .houseStep{
+            h3{
+                font-size: 18px;
+            }
+            .conter{
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+    .rulesModal{
+        margin: 0;
+        top: -17px;
+        height: 96%;
+        justify-content: space-around;
+        .top{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--Dark-Text);
+        }
+        button.close{
+            position: static;
+        }
+    }
+}
